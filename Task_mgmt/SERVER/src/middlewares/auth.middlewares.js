@@ -32,7 +32,7 @@ export const authenticate = async(req,res,next)=> {
             return
         }
 
-        const user = await user.findOne({_id:decoded_data._id, email:decoded_data.email})
+        const user = await User.findOne({_id:decoded_data._id, email:decoded_data.email})
         if(!user){
             next({
                 message: "unauthorized access denied",
@@ -40,8 +40,7 @@ export const authenticate = async(req,res,next)=> {
             })
         }
         req.user = {
-            _id: user._id,
-            email: user.email
+            
         }
         
 

@@ -1,32 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router';
-import LoginForm from "../component/forms/login.form.jsx";
+import React from 'react'
+// import Registerform from '../components/forms/register.forms.jsx' 
+import Loginform from '../components/forms/login.forms.jsx'
+import { Link   } from 'react-router'
+// ? rafce
 
 const LoginPage = () => {
   return (
-    <main className="min-h-screen flex justify-center items-center bg-gray-50 px-4">
-      <div className="shadow-2xl border border-green-600 p-8 w-full max-w-md rounded-lg bg-white">
-        {/* Heading */}
-        <h1 className="text-3xl font-bold text-center">Login</h1>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Login to access your tasks
-        </p>
-
-        {/* Form */}
-        <div className="mt-6">
-          <LoginForm />
+    <main className='min-h-screen w-full flex justify-center items-center tracking-wider'>
+        <div className='border border-red-600 py-5 px-6 min-h-140 min-w-100 rounded-2xl shadow-2xl' >
+            <h1 className='text-3xl font-extrabold text-center'>Login</h1>
+            <p className='mt-2 text-center text-[14px]'>Login to access your task</p>
+            <Loginform/>
+            {/* div */}
+            
+            <div className='mt-1'>
+                <p className='text-center'>no account sad? ?? <Link to={'/register'}><span className='text-blue-600 italic font-semibold'>Create Account</span></Link></p>
+            </div>
         </div>
 
-        {/* Link to Register */}
-        <div className="mt-4 text-center text-sm text-gray-700">
-          Don't have an account?{" "}
-          <Link to="/register">
-            <span className="text-green-700 italic font-semibold">Register</span>
-          </Link>
-        </div>
-      </div>
     </main>
-  );
-};
+    // <div>register.base</div>
+  )
+}
 
-export default LoginPage;
+export default LoginPage

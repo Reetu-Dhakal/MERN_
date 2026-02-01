@@ -1,7 +1,7 @@
-export const errorhandler = (err,req,res,next)=>{
-    console.log('error handler',err);
-    const statusCode = err?.status || 500;
-    res.status(statusCode).json({
-        message:err?.message || 'Something went wrong',
-    })
+export const errorHandler = (error, req, res, next) => {
+  console.log('error handler', error)
+  const statusCode = error?.status || 500;
+  res.status(statusCode).json({
+    message: error?.message || 'internal server error'
+  })
 }
