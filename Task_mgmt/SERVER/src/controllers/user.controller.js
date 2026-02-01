@@ -1,3 +1,4 @@
+import User from "../models/user.model.js";
 export const get = (req, res) => {
   res.status(200).json({
     message: "List of users",

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { hashPassword } from "../utils/bcrypt.utils.js"
 const userSchema = new mongoose.Schema({
     First_name: { 
         type: String, 
@@ -19,6 +20,13 @@ const userSchema = new mongoose.Schema({
         required: [true, "Password is required"]
     }
 },{ timestamps: true });
+
+userSchema.pre("save", async function(next) {
+    if (this.isModified("password")) {
+        this.password = await hashPassword(this.password);
+    }
+    next();
+});
 
 //! model
 const User = mongoose.model("User", userSchema);

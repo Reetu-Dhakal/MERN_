@@ -1,19 +1,27 @@
+import 'dotenv/config'
 import express from 'express'
 import http from 'http'
 import userRoutes from './routes/user.routes.js'
 import authRoutes from './routes/auth.routes.js'
 import{connectDb} from './config/db.config.js'
+import taskRoutes from './routes/task.routes.js'
+import cors from 'cors'
+import { error } from "console";
 import { errorhandler } from './middlewares/errorhandler.middleware.js';
 
 
 //! express app instance 
-const app = express()
+
 
 //! database connection
 connectDb()
-//
+
+const app = express()
 app.use(express.json())
 
+app.use(cors({
+    origin: '*',
+}))
 //http server 
 const server = http.createServer(app)
 
@@ -81,12 +89,13 @@ app.get('/',(req,res)=>{
 //! using routes
 app.use('/users',userRoutes)
 app.use('/auth',authRoutes)
-
+app.use('/tasks', taskRoutes)
 
 //
-server.listen(8000, () => {
+http.createServer(app).listen(8000, () => {
     console.log(`Server is running at http://localhost:8000`)
 })
+app.use(errorhandler)
 
 //Endpoint
 
