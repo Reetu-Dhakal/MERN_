@@ -4,7 +4,7 @@ import { FaTrash } from 'react-icons/fa6'
 import { FaEdit } from 'react-icons/fa'
 const Card = () => {
     return (
-        <div className="border border-gray-300 py-2 px-3 rounded-md shadow flex flex-col gap-2 max-w-sm">
+        <div className="border border-gray-300 bg-slate-50 py-2 px-3 rounded-md shadow flex flex-col gap-2 max-w-sm border-l-4 border-l-red-800">
             <div className="flex justify-between items-center">
                 <p className="text-xs font-semibold text-gray-500">Task</p>
                 {/* Pin */}
@@ -12,7 +12,7 @@ const Card = () => {
             </div>
             {/*Priority*/}
             <div>
-                <p className="bg-amber-400 w-25 rounded-md text-center text-white font-bold text-sm py-0.5">High</p>
+                <p className="bg-red-800 w-25 rounded-md text-center text-white font-bold text-sm py-0.5">High</p>
             </div>
             <div className="flex flex-col gap-1">
                 <p className="text-sm font-bold">Task Title</p>

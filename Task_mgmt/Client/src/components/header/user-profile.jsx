@@ -2,7 +2,7 @@ import React from 'react';
 const UserProfile = () => {
     return (
         <div className="flex items-center gap-1">
-            <div className="h-12 aspect-square border border-amber-600 flex items-center justify-center rounded-3xl bg-amber-200">
+            <div className="h-12 aspect-square border border-red-800 flex items-center justify-center rounded-3xl bg-red-100">
                 <span className="font-bold text-xl text-gray-700">JD</span>
 
             </div>

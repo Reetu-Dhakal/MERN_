@@ -8,7 +8,7 @@ import React from 'react';
             <div className="mx-auto w-full max-w-5xl flex justify-between items-center px-6 py-4">
                 {/* logo */}
                 <div>
-                    <p className="font-bold italic tracking-widest text-xl text-amber-300">Task App</p>
+                    <p className="font-bold italic tracking-widest text-xl text-red-800">Task App</p>
                 </div>
                 {/* search */}
                 <div className="flex items-center w-80 border border-gray-300 rounded-md px-3 py-1 gap-2">
