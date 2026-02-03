@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
+
 import './App.css'
 import Component from './components/component';
 import Greet from './components/greet';
@@ -9,6 +10,7 @@ import NotfoundPage from './pages/notfound.page';
 import RegisterPage from './pages/register.base';
 import LoginPage from './pages/login.page';
 import{BrowserRouter, Routes, Route} from 'react-router';
+import {Toaster} from 'react-hot-toast'
 
 
 
@@ -29,7 +31,7 @@ function App() {
     //   <li>component</li>
     // </div>
     <main className='h-screen min-w-full tracking-wider'>
-
+      <Toaster position="top-right" />
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Homepage/>}/> 

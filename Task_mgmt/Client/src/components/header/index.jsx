@@ -2,7 +2,7 @@
 import { GoSearch } from 'react-icons/go';
 import UserProfile from '../header/user-profile.jsx';
 import React from 'react';
- const NavBar = () => {
+ const NavBar = ({userInfo}) => {
     return (
         <main className="w-full border-b border-amber-100">
             <div className="mx-auto w-full max-w-5xl flex justify-between items-center px-6 py-4">
@@ -20,7 +20,7 @@ import React from 'react';
                     <GoSearch className="text-gray-600 text-lg" />
                 </div>
                 {/* user profile */}
-                <UserProfile />
+                <UserProfile user={userInfo} />
             </div>
         </main>
     );};
