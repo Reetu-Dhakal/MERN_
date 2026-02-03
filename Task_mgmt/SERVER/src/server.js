@@ -67,8 +67,8 @@ app.get("/Aayush", (req, res) => {
 
 app.use("/users", userRoutes);
 
-http.createServer(app).listen(8000, () => {
-  console.log("Server running at http://localhost:8000");
+http.createServer(app).listen(8005, () => {
+  console.log("Server running at http://localhost:8005");
 });
 app.use(errorHandler)
 

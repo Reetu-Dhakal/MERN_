@@ -121,3 +121,31 @@ export const login = async(req,res,next) => {
         next(error);
     }
 }
+
+//! get profile
+export const getProfile = async(req,res,next) => {
+    try{
+        const userId = req.user.id;
+        const user = await User.findOne({_id: userId}).select('-password -__v -createdAt -updatedAt');    
+        res.status(200).json({
+            message: 'user profile fetched',
+            data: user
+        })
+    }catch(error){
+        next(error);
+    }
+}
+
+//! get user detail
+export const getUserDetail = async(req,res,next) => {
+    try{
+        const userId = req.user.id;
+        const user = await User.findOne({_id: userId}).select('-password -__v');    
+        res.status(200).json({
+            message: 'user detail fetched',
+            data: user
+        })
+    }catch(error){
+        next(error);
+    }
+}

@@ -1,4 +1,5 @@
 import { verifyToken } from "../jwt.utils.js"
+import User from "../model/user.model.js"
 
 export const authenticate = async(req,res,next)=> {
     try{
@@ -20,6 +21,7 @@ export const authenticate = async(req,res,next)=> {
                 message: 'invalid token',
                 status: 400
             })
+            return
         }
 
         //? token expiry
@@ -38,10 +40,15 @@ export const authenticate = async(req,res,next)=> {
                 message: "unauthorized access denied",
                 status: 400
             })
+            return
         }
         req.user = {
-            
+            id: user._id,
+            email: user.email,
+            first_name: user.first_name,
+            last_name: user.last_name
         }
+        next()
         
 
 
